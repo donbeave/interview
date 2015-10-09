@@ -9,21 +9,29 @@
  */
 package com.zhokhov.interview.sorting;
 
+import static com.zhokhov.interview.util.Console.*;
+
 /**
  * @author <a href='mailto:alexey@zhokhov.com'>Alexey Zhokhov</a>
  */
 public class SelectionSort {
 
     public void sort(int array[]) {
-
-        //Start from first
+        // Start from first
         for (int index = 0; index < array.length; index++) {
+            ____cyan("\n--------\nindex: " + index);
 
-            //find the next smallest element
+
+            // find the next smallest element
             int minIndex = findNextSmallestElement(index, array);
+
+            ____grey("found smallest element index: " + minIndex);
+
+            ____blue("Swapping: " + index + " and " + minIndex);
 
             // Swap code
             int temp = array[minIndex];
+
             array[minIndex] = array[index];
             array[index] = temp;
         }
@@ -35,7 +43,6 @@ public class SelectionSort {
      * @ returns the index of the smallest element.
      */
     private int findNextSmallestElement(int startIndex, int array[]) {
-
         int minIndex = startIndex;
 
         int value = array[startIndex];
@@ -53,16 +60,16 @@ public class SelectionSort {
     public static void main(String[] args) {
         int array[] = {7, 1, 8, 2, 0, 12, 10, 6, 5, 3};
 
+        __yellow("\nNew array: ");
+        __dump(array);
+
+        System.out.println("\nSorting");
+
         SelectionSort selectionSort = new SelectionSort();
         selectionSort.sort(array);
 
-        dumpArray(array);
+        __green("\nResult: ");
+        __dump(array);
     }
 
-    public static void dumpArray(int[] array) {
-
-        for (int value : array) {
-            System.out.println(value);
-        }
-    }
 }
