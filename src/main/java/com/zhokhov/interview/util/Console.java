@@ -42,61 +42,69 @@ public class Console {
         return ANSI_GREY + s + ANSI_RESET;
     }
 
-    public static void printRed(String s) {
+    public static void __red(String s) {
         System.out.print(red(s));
     }
 
-    public static void printGreen(String s) {
+    public static void __green(String s) {
         System.out.print(green(s));
     }
 
-    public static void printYellow(String s) {
+    public static void __yellow(String s) {
         System.out.print(yellow(s));
     }
 
-    public static void printBlue(String s) {
+    public static void __blue(String s) {
         System.out.print(blue(s));
     }
 
-    public static void printPurple(String s) {
+    public static void __purple(String s) {
         System.out.print(purple(s));
     }
 
-    public static void printCyan(String s) {
+    public static void __cyan(String s) {
         System.out.print(cyan(s));
     }
 
-    public static void printGrey(String s) {
+    public static void __grey(String s) {
         System.out.print(grey(s));
     }
 
-    public static void printlnRed(String s) {
+    public static void ____red(String s) {
         System.out.println(red(s));
     }
 
-    public static void printlnGreen(String s) {
+    public static void ____green(String s) {
         System.out.println(green(s));
     }
 
-    public static void printlnYellow(String s) {
+    public static void ____yellow(String s) {
         System.out.println(yellow(s));
     }
 
-    public static void printlnBlue(String s) {
+    public static void ____blue(String s) {
         System.out.println(blue(s));
     }
 
-    public static void printlnPurple(String s) {
+    public static void ____purple(String s) {
         System.out.println(purple(s));
     }
 
-    public static void printlnCyan(String s) {
+    public static void ____cyan(String s) {
         System.out.println(cyan(s));
     }
 
-    public static void printlnGrey(String s) {
+    public static void ____grey(String s) {
         System.out.println(grey(s));
     }
 
+    /*
+     * Utility for dumping the array
+     */
+    public static void __dump(int[] array) {
+        for (int i : array) System.out.print(i + " ");
+
+        System.out.print("\n");
+    }
 
 }

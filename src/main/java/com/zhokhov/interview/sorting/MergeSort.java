@@ -9,7 +9,7 @@
  */
 package com.zhokhov.interview.sorting;
 
-import com.zhokhov.interview.util.Arrays;
+import static com.zhokhov.interview.util.Console.__dump;
 
 /**
  * @author <a href='mailto:alexey@zhokhov.com'>Alexey Zhokhov</a>
@@ -133,7 +133,7 @@ public class MergeSort {
 
         mergeSort.sort(array);
 
-        Arrays.dump(array);
+        __dump(array);
 
         System.out.println("Now demo a simple merge routine....");
         System.out.println("Merging..{1, 3, 5, 7} and ..{2, 4, 6, 8, 10}..");
@@ -142,7 +142,7 @@ public class MergeSort {
 
         int[] mergedArray = mergeSort.sampleMerge(leftArray, rightArray);
 
-        Arrays.dump(mergedArray);
+        __dump(mergedArray);
     }
 
 }

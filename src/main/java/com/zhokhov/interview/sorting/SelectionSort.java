@@ -51,11 +51,9 @@ public class SelectionSort {
     }
 
     public static void main(String[] args) {
-
         int array[] = {7, 1, 8, 2, 0, 12, 10, 6, 5, 3};
 
         SelectionSort selectionSort = new SelectionSort();
-
         selectionSort.sort(array);
 
         dumpArray(array);
