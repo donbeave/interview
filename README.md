@@ -1,5 +1,5 @@
 # Data Structures and Algorithms in Java
-useful in interview process
+Very useful in interview process for Java Software Development Engineer (SDE).
 
 ## Simple Sorting
 
