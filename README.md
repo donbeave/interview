@@ -15,7 +15,7 @@ Sorting process:
 
 [Implementation](https://github.com/donbeave/interview/blob/master/src/main/java/com/zhokhov/interview/sorting/BubbleSort.java)
 
-#### Efficiency
+##### Efficiency
 
 For 10 data items, this is 45 comparisons (9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1).
 
