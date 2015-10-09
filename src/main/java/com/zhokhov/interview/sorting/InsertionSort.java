@@ -26,7 +26,7 @@ public class InsertionSort {
         }
     }
 
-    void insert(int array[], int currentIndex) {
+    private void insert(int array[], int currentIndex) {
         // value of the element to be inserted
         int value = array[currentIndex];
 
@@ -64,7 +64,7 @@ public class InsertionSort {
     /*
      * Sample method, introduce insert item
      */
-    void sampleInsert(int array[], int value) {
+    private void sampleInsert(int array[], int value) {
         ____grey("value: " + value);
 
         int reverseIndex = array.length - 1;

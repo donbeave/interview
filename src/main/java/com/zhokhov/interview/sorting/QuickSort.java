@@ -9,55 +9,97 @@
  */
 package com.zhokhov.interview.sorting;
 
+import static com.zhokhov.interview.util.Console.*;
+
 /**
  * @author <a href='mailto:alexey@zhokhov.com'>Alexey Zhokhov</a>
  */
 public class QuickSort {
 
-    public void sort(int array[])
-// pre: array is full, all elements are non-null integers
-// post: the array is sorted in ascending order
-    {
-        quickSort(array, 0, array.length - 1);              // quicksort all the elements in the array
+    public void sort(int array[]) {
+        quickSort(array, 0, array.length - 1);
     }
 
+    /*
+     * The quickSort algorithm implementation
+     */
+    private void quickSort(int array[], int startIndex, int endIndex) {
+        // index of left-to-right scan
+        int leftIndex = startIndex;
 
-    public void quickSort(int array[], int start, int end)
-    {
-        int i = start;                          // index of left-to-right scan
-        int k = end;                            // index of right-to-left scan
+        // index of right-to-left scan
+        int rightIndex = endIndex;
 
-        if (end - start >= 1)                   // check that there are at least two elements to sort
-        {
-            int pivot = array[start];       // set the pivot as the first element in the partition
+        __grey("\nquickSort, leftIndex: " + leftIndex + ", rightIndex: " + rightIndex + "  ==> ");
+        ____purple("" + (endIndex - startIndex >= 1));
 
-            while (k > i)                   // while the scan indices from left and right have not met,
-            {
-                while (array[i] <= pivot && i <= end && k > i)  // from the left, look for the first
-                    i++;                                    // element greater than the pivot
-                while (array[k] > pivot && k >= start && k >= i) // from the right, look for the first
-                    k--;                                        // element not greater than the pivot
-                if (k > i)                                       // if the left seekindex is still smaller than
-                    swap(array, i, k);                      // the right index, swap the corresponding elements
+        // check that there are at least two elements to sort
+        // if there is only one element in the partition, do not do any sorting
+        if (endIndex - startIndex >= 1) {
+            // set the pivot as the first element in the partition
+            int pivot = array[startIndex];
+
+            ____grey("pivot: " + pivot);
+
+            // while the scan indices from left and right have not met
+            while (rightIndex > leftIndex) {
+                // from the left, look for the first
+                // element greater than the pivot
+                while (array[leftIndex] <= pivot && leftIndex <= endIndex && rightIndex > leftIndex) {
+                    leftIndex++;
+
+                    ____blue(" new leftIndex: " + leftIndex);
+                }
+
+                // from the right, look for the first
+                // element not greater than the pivot
+                while (array[rightIndex] > pivot && rightIndex >= startIndex && rightIndex >= leftIndex) {
+                    rightIndex--;
+
+                    ____blue(" new rightIndex: " + rightIndex);
+                }
+
+                // if the left seekindex is still smaller than
+                // the right index, swap the corresponding elements
+                if (rightIndex > leftIndex) {
+                    swap(array, leftIndex, rightIndex);
+                }
             }
-            swap(array, start, k);          // after the indices have crossed, swap the last element in
+
+            // after the indices have crossed, swap the last element in
             // the left partition with the pivot
-            quickSort(array, start, k - 1); // quicksort the left partition
-            quickSort(array, k + 1, end);   // quicksort the right partition
-        }
-        else    // if there is only one element in the partition, do not do any sorting
-        {
-            return;                     // the array is sorted, so exit
+            swap(array, startIndex, rightIndex);
+
+            // quicksort the left partition
+            quickSort(array, startIndex, rightIndex - 1);
+
+            // quicksort the right partition
+            quickSort(array, rightIndex + 1, endIndex);
         }
     }
 
-    public void swap(int array[], int index1, int index2)
-// pre: array is full and index1, index2 < array.length
-// post: the values at indices 1 and 2 have been swapped
-    {
-        int temp = array[index1];           // store the first value in a temp
-        array[index1] = array[index2];      // copy the value of the second into the first
-        array[index2] = temp;               // copy the value of the temp into the second
+    private void swap(int array[], int index1, int index2) {
+        ____blue("Swapping: " + index1 + " and " + index2);
+
+        int temp = array[index1];
+
+        array[index1] = array[index2];
+        array[index2] = temp;
+    }
+
+    public static void main(String[] args) {
+        int array[] = {7, 1, 8, 2, 0, 12, 10, 6, 5, 3};
+
+        __yellow("\nNew array: ");
+        __dump(array);
+
+        System.out.println("\nSorting");
+
+        QuickSort quickSort = new QuickSort();
+        quickSort.sort(array);
+
+        __green("\nResult: ");
+        __dump(array);
     }
 
 }
