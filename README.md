@@ -1,5 +1,4 @@
-# interview
-Data Structures and Algorithms in Java (useful in interview process)
+# Data Structures and Algorithms in Java (useful in interview process)
 
 ## Simple Sorting
 
