@@ -4,8 +4,6 @@
  *  Your are solely responsibly for any damage that may occur by using this code.
  *
  *  This code is not tested for all boundary conditions. Use it at your own risk.
- *
- *  Original code: http://www.codenlearn.com/2011/10/simple-merge-sort.html
  */
 package com.zhokhov.interview.sorting;
 
