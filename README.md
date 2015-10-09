@@ -5,6 +5,8 @@ useful in interview process
 
 ### Bubble Sort
 
+[Implementation](https://github.com/donbeave/interview/blob/master/src/main/java/com/zhokhov/interview/sorting/BubbleSort.java)
+
 The bubble sort is notoriously slow, but it’s conceptually the simplest of the sorting algorithms.
 
 Sorting process:
@@ -12,8 +14,6 @@ Sorting process:
 1. Compare two items.
 2. If the one on the left is bigger, swap them.
 3. Move one position right.
-
-[Implementation](https://github.com/donbeave/interview/blob/master/src/main/java/com/zhokhov/interview/sorting/BubbleSort.java)
 
 ##### Efficiency
 
@@ -25,9 +25,9 @@ In general, where `N` is the number of items in the array, there are `N-1` compa
 
 ### Selection Sort
 
-The selection sort improves on the bubble sort by reducing the number of swaps necessary from `O(N2)` to `O(N)`. Unfortunately, the number of comparisons remains `O(N2)`. However, the selection sort can still offer a significant improvement for large records that must be physically moved around in memory, causing the swap time to be much more important than the comparison time.
-
 [Implementation](https://github.com/donbeave/interview/blob/master/src/main/java/com/zhokhov/interview/sorting/SelectionSort.java)
+
+The selection sort improves on the bubble sort by reducing the number of swaps necessary from `O(N2)` to `O(N)`. Unfortunately, the number of comparisons remains `O(N2)`. However, the selection sort can still offer a significant improvement for large records that must be physically moved around in memory, causing the swap time to be much more important than the comparison time.
 
 ##### Efficiency
 
