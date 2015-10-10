@@ -27,6 +27,8 @@ In general, where `N` is the number of items in the array, there are `N-1` compa
 
 [Implementation](https://github.com/donbeave/interview/blob/master/src/main/java/com/zhokhov/interview/sorting/SelectionSort.java)
 
+[Simple explanation](http://www.codenlearn.com/2011/07/simple-selection-sort.html)
+
 The selection sort improves on the bubble sort by reducing the number of swaps necessary from `O(N2)` to `O(N)`. Unfortunately, the number of comparisons remains `O(N2)`. However, the selection sort can still offer a significant improvement for large records that must be physically moved around in memory, causing the swap time to be much more important than the comparison time.
 
 ##### Efficiency
@@ -36,6 +38,8 @@ The selection sort performs the same number of comparisons as the bubble sort: `
 ### Insertion Sort
 
 [Implementation](https://github.com/donbeave/interview/blob/master/src/main/java/com/zhokhov/interview/sorting/InsertionSort.java)
+
+[Simple explanation](http://www.codenlearn.com/2011/07/simple-insertion-sort.html)
 
 In most cases the insertion sort is the best of the elementary sorts described in this chapter. It still executes in `O(N2)` time, but it’s about twice as fast as the bubble sort and somewhat faster than the selection sort in normal situations. It’s also not too complex, although it’s slightly more involved than the bubble and selection sorts. It’s often used as the final stage of more sophisticated sorts, such as quicksort.
 
@@ -57,6 +61,8 @@ For data that is already sorted or almost sorted, the insertion sort does much b
 
 [Implementation](https://github.com/donbeave/interview/blob/master/src/main/java/com/zhokhov/interview/sorting/MergeSort.java)
 
+[Simple explanation](http://www.codenlearn.com/2011/10/simple-merge-sort.html)
+
 mergesort is a much more efficient sorting technique than those we saw in "Simple Sorting", at least in terms of speed. While the bubble, insertion, and selection sorts take `O(N2)` time, the mergesort is `O(N*logN)`.
 
 For example, if `N` (the number of items to be sorted) is `10,000`, then `N2` is `100,000,000`, while `N*logN` is only `40,000`. If sorting this many items required `40` seconds with the mergesort, it would take almost `28` hours for the insertion sort.
@@ -77,6 +83,9 @@ In the mergesort algorithm, the number of comparisons is always somewhat less th
 ### Quick Sort
 
 [Implementation](https://github.com/donbeave/interview/blob/master/src/main/java/com/zhokhov/interview/sorting/QuickSort.java)
+
+[Simple explanation](http://me.dt.in.th/page/Quicksort/)
+[Simple explanation 2](http://www.mycstutorials.com/articles/sorting/quicksort)
 
 Quicksort is undoubtedly the most popular sorting algorithm, and for good reason: In the majority of situations, it’s the fastest, operating in `O(N*logN)` time. (This is only true for internal or in-memory sorting; for sorting data in disk files, other algorithms may be better.)
 
