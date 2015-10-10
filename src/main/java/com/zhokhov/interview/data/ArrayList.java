@@ -27,14 +27,15 @@ public class ArrayList {
         this.size = SIZE_FACTOR;
     }
 
-    public void add(Object obj) {
+    public void add(Object item) {
         System.out.println("index:" + this.index + "size:" + this.size + "data size:" + this.data.length);
 
         if (this.index == this.size - 1) {
             //we need to increase the size of data[]
             increaseSizeAndReallocate();
         }
-        data[this.index] = obj;
+
+        data[this.index] = item;
         this.index++;
     }
 
@@ -44,6 +45,7 @@ public class ArrayList {
         // TODO: Arrays.copyOf()
         Object newData[] = new Object[this.size];
 
+        // TODO: System.arraycopy(data, 0, newData, 0, data.length);
         for (int i = 0; i < data.length; i++) {
             newData[i] = data[i];
         }
@@ -53,35 +55,35 @@ public class ArrayList {
         System.out.println("***index:" + this.index + "size:" + this.size + "data size:" + this.data.length);
     }
 
-    public Object get(int i) throws Exception {
-        if (i > this.index - 1) {
+    public Object get(int index) throws Exception {
+        if (index > this.index - 1) {
             throw new Exception("ArrayIndexOutOfBound");
         }
-        if (i < 0) {
+        if (index < 0) {
             throw new Exception("Negative Value");
         }
-        return this.data[i];
 
+        return this.data[index];
     }
 
-    public void remove(int i) throws Exception {
-        if (i > this.index - 1) {
+    public void remove(int removeIndex) throws Exception {
+        if (removeIndex > this.index - 1) {
             throw new Exception("ArrayIndexOutOfBound");
         }
-        if (i < 0) {
+        if (removeIndex < 0) {
             throw new Exception("Negative Value");
         }
-        System.out.println("Object getting removed:" + this.data[i]);
+        System.out.println("Object getting removed:" + this.data[removeIndex]);
 
-        for (int x = i; x < this.data.length - 1; x++) {
-            data[x] = data[x + 1];
+        for (int i = removeIndex; i < this.data.length - 1; i++) {
+            data[i] = data[i + 1];
         }
+
         this.index--;
     }
 
     public static void main(String[] args) throws Exception {
         ArrayList mal = new ArrayList();
-        mal.add("0");
         mal.add("1");
         mal.add("2");
         mal.add("3");
@@ -91,8 +93,11 @@ public class ArrayList {
         mal.add("7");
         mal.add("8");
         mal.add("9");
+        mal.add("10");
 
+        // remove by index
         mal.remove(5);
+
         System.out.println(mal.get(7));
     }
 
