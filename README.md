@@ -72,6 +72,18 @@ As we noted, the mergesort runs in `O(N*logN)` time. There are `24` copies neces
 
 In the mergesort algorithm, the number of comparisons is always somewhat less than the number of copies.
 
+### Quick Sort
+
+Quicksort is undoubtedly the most popular sorting algorithm, and for good reason: In the majority of situations, it’s the fastest, operating in `O(N*logN)`` time. (This is only true for internal or in-memory sorting; for sorting data in disk files, other algorithms may be better.)
+
+To understand quicksort, you should be familiar with the partitioning algorithm.
+
+Quicksort algorithm operates by partitioning an array into two sub-arrays and then calling itself recursively to quicksort each of these subarrays
+
+##### Efficiency
+
+Quicksort operates in `O(N*logN)`` time. This is generally true of the divide-and-conquer algorithms, in which a recursive method divides a range of items into two groups and then calls itself to handle each group. In this situation the logarithm actually has a base of `2`: The running time is proportional to `N*log2N`.
+
 ### TODO
 
 1. triangular numbers
