@@ -100,6 +100,10 @@ Quicksort operates in `O(N*logN)` time. This is generally true of the divide-and
 ### TODO
 
 1. triangular numbers
+2. heap sort, binary search (BST)
+3. OBJECT ORIENTED DESIGN. Major concepts, are the use of patterns necessary?
+4. How does dynamic recompilation work in Resin (or any other Java servlet container)
+5. write a O(log(n)) function
 
 ### Sources
 
