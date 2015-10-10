@@ -55,6 +55,8 @@ For data that is already sorted or almost sorted, the insertion sort does much b
 
 ### Merge Sort
 
+[Implementation](https://github.com/donbeave/interview/blob/master/src/main/java/com/zhokhov/interview/sorting/MergeSort.java)
+
 mergesort is a much more efficient sorting technique than those we saw in "Simple Sorting", at least in terms of speed. While the bubble, insertion, and selection sorts take `O(N2)` time, the mergesort is `O(N*logN)`.
 
 For example, if `N` (the number of items to be sorted) is `10,000`, then `N2` is `100,000,000`, while `N*logN` is only `40,000`. If sorting this many items required `40` seconds with the mergesort, it would take almost `28` hours for the insertion sort.
@@ -74,7 +76,9 @@ In the mergesort algorithm, the number of comparisons is always somewhat less th
 
 ### Quick Sort
 
-Quicksort is undoubtedly the most popular sorting algorithm, and for good reason: In the majority of situations, it’s the fastest, operating in `O(N*logN)`` time. (This is only true for internal or in-memory sorting; for sorting data in disk files, other algorithms may be better.)
+[Implementation](https://github.com/donbeave/interview/blob/master/src/main/java/com/zhokhov/interview/sorting/QuickSort.java)
+
+Quicksort is undoubtedly the most popular sorting algorithm, and for good reason: In the majority of situations, it’s the fastest, operating in `O(N*logN)` time. (This is only true for internal or in-memory sorting; for sorting data in disk files, other algorithms may be better.)
 
 To understand quicksort, you should be familiar with the partitioning algorithm.
 
@@ -82,7 +86,7 @@ Quicksort algorithm operates by partitioning an array into two sub-arrays and th
 
 ##### Efficiency
 
-Quicksort operates in `O(N*logN)`` time. This is generally true of the divide-and-conquer algorithms, in which a recursive method divides a range of items into two groups and then calls itself to handle each group. In this situation the logarithm actually has a base of `2`: The running time is proportional to `N*log2N`.
+Quicksort operates in `O(N*logN)` time. This is generally true of the divide-and-conquer algorithms, in which a recursive method divides a range of items into two groups and then calls itself to handle each group. In this situation the logarithm actually has a base of `2`: The running time is proportional to `N*log2N`.
 
 ### TODO
 
