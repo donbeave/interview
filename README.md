@@ -3,7 +3,34 @@ Very useful in interview process for Java Software Development Engineer (SDE).
 
 ## Big O Notation
 
+#### Big-O Complexity Chart
 ![Big-O Complexity Chart](http://bigocheatsheet.com/img/big-o-complexity.png)
+
+####
+
+<table>
+  <tr>
+    <th>Growth Rate</th><th>Name</th><th>Code e.g.</th><th>description</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Constant</td>
+    <td>a+=1;</td>
+    <td>statement (one line of code)</td>
+  </tr>
+  <tr>
+    <td>log(n)</td>
+    <td>Logarithmic</td>
+    <td>
+```    
+while(n>1){
+  n=n/2;
+}
+```
+    </td>
+    <td>Divide in half (binary search)</td>
+  </tr>
+</table>
 
 ##### If-Then-Else
 
