@@ -16,7 +16,13 @@ import static com.zhokhov.interview.util.Console.*;
  */
 public class MergeSort {
 
+    private int COMPARISONS_COUNT;
+    private int LOOP_COUNT;
+
     public void sort(int[] array) {
+        COMPARISONS_COUNT = 0;
+        LOOP_COUNT = 0;
+
         mergeSort(array, 0, array.length - 1);
     }
 
@@ -27,6 +33,7 @@ public class MergeSort {
         __grey("\nmergeSort, left: " + left + ", right: " + right + "  ==> ");
         ____purple("" + (left < right));
 
+        COMPARISONS_COUNT++;
         if (left < right) {
             // split the array into 2
             int center = (left + right) / 2;
@@ -64,6 +71,8 @@ public class MergeSort {
         // array i.e you may have a array of the form [1,5] [2,4]
         // We need to sort the above as [1,2,4,5]
         while (leftArrayBegin <= leftArrayEnd && rightArrayBegin <= rightArrayEnd) {
+            COMPARISONS_COUNT++;
+
             if (array[leftArrayBegin] <= array[rightArrayBegin]) {
                 resultArray[resultArrayBegin++] = array[leftArrayBegin++];
 
@@ -78,6 +87,8 @@ public class MergeSort {
         // After the main loop completed we may have few more elements in
         // left array copy them first
         while (leftArrayBegin <= leftArrayEnd) {
+            COMPARISONS_COUNT++;
+
             resultArray[resultArrayBegin++] = array[leftArrayBegin++];
 
             ____blue(" [post] new leftArrayBegin: " + leftArrayBegin);
@@ -86,6 +97,8 @@ public class MergeSort {
         // After the main loop completed we may have few more elements in
         // right array copy them
         while (rightArrayBegin <= rightArrayEnd) {
+            COMPARISONS_COUNT++;
+
             resultArray[resultArrayBegin++] = array[rightArrayBegin++];
 
             ____blue(" [post] new rightArrayBegin: " + rightArrayBegin);
@@ -93,6 +106,8 @@ public class MergeSort {
 
         // Copy resultArray back to the main array
         for (int i = numElements - 1; i >= 0; i--, rightArrayEnd--) {
+            LOOP_COUNT++;
+
             array[rightArrayEnd] = resultArray[i];
         }
     }
@@ -165,6 +180,12 @@ public class MergeSort {
 
         __green("\nResult: ");
         __dump(array);
+
+        ____grey("\nStatistics");
+        __green("  Comparisons: ");
+        System.out.print(mergeSort.COMPARISONS_COUNT);
+        __green("\n  Loops: ");
+        System.out.println(mergeSort.LOOP_COUNT);
 
         System.out.print("\n");
         System.out.println("***********************\n");
