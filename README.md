@@ -8,17 +8,17 @@ Very useful in interview process for Java Software Development Engineer (SDE).
 
 #### Constant — statement (one line of code)
 
-```
-a+=1;
+```java
+a += 1;
 ```
 
 Growth Rate: **1**
 
 #### Logarithmic — divide in half (binary search)
 
-```
-while(n>1){
-  n=n/2;
+```java
+while (n > 1) {
+  n = n / 2;
 }
 ```
 
@@ -26,13 +26,16 @@ Growth Rate: **log(n)**
 
 #### Linear — loop
 
-```
-for(c=0; c<n; c++){
-  a+=1;
+```java
+for (int i = 0; i < n; i++) {
+  // statements
+  a += 1;
 }
 ```
 
 Growth Rate: **n**
+
+The loop executes `N` times, so the sequence of statements also executes `N` times. If we assume the statements are `O(1)`, the total time for the for loop is `N * O(1)`, which is `O(N)` overall.
 
 #### Quadratic — Effective sorting algorithms
 
@@ -42,25 +45,29 @@ Mergesort, Quicksort, …
 
 Growth Rate: **n*log(n)**
 
-#### Quadratic — double loop
+#### Quadratic — double loop (nested loops)
 
-```
-for(c=0; c<n; c++){
-  for(i=0; i<n; i++){
-    a+=1;
+```java
+for (int c = 0; c < n; c++) {
+  for (int i = 0; i < n; i++) {
+    // sequence of statements
+    a += 1;
   }
 }
 ```
 
 Growth Rate: **n^2**
 
+The outer loop executes N times. Every time the outer loop executes, the inner loop executes `M` times. As a result, the statements in the inner loop execute a total of `N * M` times. Thus, the complexity is `O(N * M)`.
+In a common special case where the stopping condition of the inner loop is `J < N` instead of `J < M` (i.e., the inner loop also executes `N` times), the total complexity for the two loops is `O(N2)`.
+
 #### Cubic — triple loop
 
-```
-for(c=0; c<n; c++){
-  for(i=0; i<n; i++){
-    for(x=0; x<n; x++){
-      a+=1;
+```java
+for (c = 0; c < n; c++) {
+  for (i = 0; i < n; i++) {
+    for (x = 0; x < n; x++) {
+      a += 1;
     }
   }
 }
@@ -78,40 +85,15 @@ Growth Rate: **2^n**
 
 ##### If-Then-Else
 
-```
-if (cond) then
+``` java
+if (cond) {
   block 1 (sequence of statements)
-else
+} else {
   block 2 (sequence of statements)
-end if;
+}
 ```
 
-If block `1` takes `O(1)` and block `2` takes `O(N)`, the if-then-else statement would be `O(N)`.
-
-##### Loops
-
-```
-for I in 1 .. N loop
-  sequence of statements
-end loop;
-```
-
-The loop executes `N` times, so the sequence of statements also executes `N` times. If we
-assume the statements are `O(1)`, the total time for the for loop is `N * O(1)`, which is `O(N)`
-overall.
-
-##### Nested loops
-
-```
-for I in 1 .. N loop
-  for J in 1 .. M loop
-    sequence of statements
-  end loop;
-end loop;
-```
-
-The outer loop executes N times. Every time the outer loop executes, the inner loop executes `M` times. As a result, the statements in the inner loop execute a total of `N * M` times. Thus, the complexity is `O(N * M)``.
-In a common special case where the stopping condition of the inner loop is `J < N` instead of `J < M` (i.e., the inner loop also executes `N` times), the total complexity for the two loops is `O(N2)`.
+If `block 1` takes `O(1)` and `block 2` takes `O(N)`, the `if-then-else` statement would be `O(N)`.
 
 ##### Statements with function/ procedure calls
 
