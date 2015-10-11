@@ -110,6 +110,9 @@ public class MergeSort {
 
             array[rightArrayEnd] = resultArray[i];
         }
+
+        __red("==> ");
+        __dump(array);
     }
 
     /*
