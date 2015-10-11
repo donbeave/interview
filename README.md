@@ -117,7 +117,7 @@ has complexity `(N2)`. The loop executes N times and each function/procedure cal
 
 ### Bubble Sort
 
-![Bubble Sort](https://raw.githubusercontent.com/donbeave/interview/master/bubble-sort.gif)
+![Bubble Sort animation](https://raw.githubusercontent.com/donbeave/interview/master/bubble-sort.gif)
 
 [Implementation](https://github.com/donbeave/interview/blob/master/src/main/java/com/zhokhov/interview/sorting/BubbleSort.java)
 
@@ -136,8 +136,9 @@ For `10` data items, this is `45` comparisons (`9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 
 In general, where `N` is the number of items in the array, there are `N-1` comparisons on the first pass, `N-2` on the second, and so on. The formula for the sum of such a series is
 `(N–1) + (N–2) + (N–3) + ... + 1 = N*(N–1)/2 N*(N–1)/2 is 45 (10*9/2)` when `N` is `10`.
 
-
 ### Selection Sort
+
+![Selection Sort animation](https://raw.githubusercontent.com/donbeave/interview/master/selection-sort.gif)
 
 [Implementation](https://github.com/donbeave/interview/blob/master/src/main/java/com/zhokhov/interview/sorting/SelectionSort.java)
 
@@ -150,6 +151,8 @@ The selection sort improves on the bubble sort by reducing the number of swaps n
 The selection sort performs the same number of comparisons as the bubble sort: `N*(N-1)/2`. For `10` data items, this is `45` comparisons. However, `10` items require fewer than `10` swaps. With `100` items, `4,950` comparisons are required, but fewer than `100` swaps. For large values of `N`, the comparison times will dominate, so we would have to say that the selection sort runs in `O(N2)` time, just as the bubble sort did.
 
 ### Insertion Sort
+
+![Insertion Sort animation](https://raw.githubusercontent.com/donbeave/interview/master/insertion-sort.gif)
 
 [Implementation](https://github.com/donbeave/interview/blob/master/src/main/java/com/zhokhov/interview/sorting/InsertionSort.java)
 
@@ -172,6 +175,8 @@ For data that is already sorted or almost sorted, the insertion sort does much b
 ## Advanced Sorting
 
 ### Merge Sort
+
+![Merge Sort animation](https://raw.githubusercontent.com/donbeave/interview/master/merge-sort.gif)
 
 [Implementation](https://github.com/donbeave/interview/blob/master/src/main/java/com/zhokhov/interview/sorting/MergeSort.java)
 
@@ -211,6 +216,8 @@ Compared to quicksort the mergesort algorithm puts less effort in dividing the l
 Quicksort can sort "inline" of an existing collection, e.g. it does not have to create a copy of the collection while Standard mergesort does require a copy of the array although there are (complex) implementations of mergesort which allow to avoid this copying.
 
 ### Quick Sort
+
+![Quick Sort animation](https://raw.githubusercontent.com/donbeave/interview/master/quick-sort.gif)
 
 [Implementation](https://github.com/donbeave/interview/blob/master/src/main/java/com/zhokhov/interview/sorting/QuickSort.java)
 
