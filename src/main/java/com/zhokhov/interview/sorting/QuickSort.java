@@ -16,7 +16,13 @@ import static com.zhokhov.interview.util.Console.*;
  */
 public class QuickSort {
 
+    private int COMPARISONS_COUNT;
+    private int SWAPS_COUNT;
+
     public void sort(int array[]) {
+        COMPARISONS_COUNT = 0;
+        SWAPS_COUNT = 0;
+
         quickSort(array, 0, array.length - 1);
     }
 
@@ -33,6 +39,7 @@ public class QuickSort {
         __grey("\nquickSort, leftIndex: " + leftIndex + ", rightIndex: " + rightIndex + "  ==> ");
         ____purple("" + (endIndex - startIndex >= 1));
 
+        COMPARISONS_COUNT++;
         // check that there are at least two elements to sort
         // if there is only one element in the partition, do not do any sorting
         if (endIndex - startIndex >= 1) {
@@ -43,9 +50,13 @@ public class QuickSort {
 
             // while the scan indices from left and right have not met
             while (rightIndex > leftIndex) {
+                COMPARISONS_COUNT++;
+
                 // from the left, look for the first
                 // element greater than the pivot
                 while (array[leftIndex] <= pivot && leftIndex <= endIndex && rightIndex > leftIndex) {
+                    COMPARISONS_COUNT++;
+
                     leftIndex++;
 
                     ____blue(" new leftIndex: " + leftIndex);
@@ -54,11 +65,14 @@ public class QuickSort {
                 // from the right, look for the first
                 // element not greater than the pivot
                 while (array[rightIndex] > pivot && rightIndex >= startIndex && rightIndex >= leftIndex) {
+                    COMPARISONS_COUNT++;
+
                     rightIndex--;
 
                     ____blue(" new rightIndex: " + rightIndex);
                 }
 
+                COMPARISONS_COUNT++;
                 // if the left seekindex is still smaller than
                 // the right index, swap the corresponding elements
                 if (rightIndex > leftIndex) {
@@ -79,6 +93,7 @@ public class QuickSort {
     }
 
     private void swap(int array[], int index1, int index2) {
+        SWAPS_COUNT++;
         ____blue("Swapping: " + index1 + " and " + index2);
 
         int temp = array[index1];
@@ -100,6 +115,12 @@ public class QuickSort {
 
         __green("\nResult: ");
         __dump(array);
+
+        ____grey("\nStatistics");
+        __green("  Comparisons: ");
+        System.out.print(quickSort.COMPARISONS_COUNT);
+        __green("\n  Swaps: ");
+        System.out.println(quickSort.SWAPS_COUNT);
     }
 
 }
