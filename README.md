@@ -122,6 +122,7 @@ Quicksort operates in `O(N*logN)` time. This is generally true of the divide-and
 
 1. [Data Structures and Algorithms in Java, second edition by Robert Lafore](http://rineshpk.weebly.com/uploads/1/8/2/0/1820991/data_structures_and_algorithms_in_javatqw_darksiderg.pdf)
 2. [10 Object Oriented Design Principles Java Programmer should know](http://javarevisited.blogspot.com/2012/03/10-object-oriented-design-principles.html)
+3. [Design Patterns](http://www.oodesign.com/)
 
 ```
 You are free to use this code anywhere, copy, modify and redistribute at your own risk.
