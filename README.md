@@ -197,6 +197,10 @@ This is an example of a hash function. It hashes (converts) a number in a large 
 
 Insertion and searching in hash tables can approach `O(1)` time. If no collision occurs, only a call to the hash function and a single array reference are necessary to insert a new item or find an existing item. This is the minimum access time.
 
+### Algorithms and Data Structures of JDK 7
+
+http://www.yetanothercoder.ru/2013/06/algorithms-and-data-structures-of-jdk-7.html
+
 # Top 10 Object Oriented Design Principles
 
 1. **DRY (Don't repeat yourself)** — avoids duplication in code
