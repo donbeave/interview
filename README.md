@@ -287,6 +287,7 @@ http://www.yetanothercoder.ru/2013/06/algorithms-and-data-structures-of-jdk-7.ht
 5. [Big O notation](http://web.mit.edu/16.070/www/lecture/big_o.pdf)
 6. [A beginner's guide to Big O notation](https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/)
 7. [Big O Notation. Using not-boring math to measure code's efficiency](https://www.interviewcake.com/article/big-o-notation-time-and-space-complexity)
+8. [Understanding Algorithm complexity, Asymptotic and Big-O notation](http://www.codenlearn.com/2011/07/understanding-algorithm-complexity.html)
 
 ```
 You are free to use this code anywhere, copy, modify and redistribute at your own risk.
