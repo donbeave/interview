@@ -97,6 +97,19 @@ Quicksort algorithm operates by partitioning an array into two sub-arrays and th
 
 Quicksort operates in `O(N*logN)` time. This is generally true of the divide-and-conquer algorithms, in which a recursive method divides a range of items into two groups and then calls itself to handle each group. In this situation the logarithm actually has a base of `2`: The running time is proportional to `N*log2N`.
 
+# Top 10 Object Oriented Design Principles
+
+1. *DRY (Don't repeat yourself)* - avoids duplication in code.
+2. *Encapsulate what changes* - hides implementation detail, helps in maintenance
+3. *Open Closed design principle* - open for extension, closed for modification
+4. *SRP (Single Responsibility Principle)* - one class should do one thing and do it well
+5. *DIP (Dependency Inversion Principle)* - don't ask, let framework give to you
+6. *Favor Composition over Inheritance* - code reuse without cost of inflexibility
+7. *LSP (Liskov Substitution Principle)* - sub type must be substitutable for super type
+8. *ISP (Interface Segregation Pricinciple)* - avoid monilithic interface, reduce pain on client side
+9. *Programming for Interface* - helps in maintenance, improves flexibility
+10. *Delegation principle* - don't do all things by yourself, delegate it
+
 ### TODO
 
 1. triangular numbers
@@ -108,6 +121,7 @@ Quicksort operates in `O(N*logN)` time. This is generally true of the divide-and
 ### Sources
 
 1. [Data Structures and Algorithms in Java, second edition by Robert Lafore](http://rineshpk.weebly.com/uploads/1/8/2/0/1820991/data_structures_and_algorithms_in_javatqw_darksiderg.pdf)
+2. [10 Object Oriented Design Principles Java Programmer should know](http://javarevisited.blogspot.com/2012/03/10-object-oriented-design-principles.html)
 
 ```
 You are free to use this code anywhere, copy, modify and redistribute at your own risk.
