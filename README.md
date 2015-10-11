@@ -6,41 +6,17 @@ Very useful in interview process for Java Software Development Engineer (SDE).
 #### Big-O Complexity Chart
 ![Big-O Complexity Chart](http://bigocheatsheet.com/img/big-o-complexity.png)
 
-####
+#### Constant — statement (one line of code)
 
-<table>
-  <tr>
-    <th>Growth Rate</th><th>Name</th><th>Code e.g.</th><th>description</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>Constant</td>
-    <td>a+=1;</td>
-    <td>statement (one line of code)</td>
-  </tr>
-  <tr>
-    <td>log(n)</td>
-    <td>Logarithmic</td>
-    <td>
-```    
-while(n>1){
-  n=n/2;
-}
+Growth Rate: 1
+Code:
+
 ```
-    </td>
-    <td>Divide in half (binary search)</td>
-  </tr>
-</table>
+a+=1;
+```
 
-| Status | Response  |
-| ------ | --------- |
-| 200    | `json`                          |
-|        | `   {`                          |
-|        | ` "id": 10,`                    |
-|        | ` "username": "alanpartridge",` |
-|        | ` more code...`                 |
-|        | `}`                             |
-| 400    |                                 |
+#### Logarithmic — divide in half (binary search)
+
 
 ##### If-Then-Else
 
