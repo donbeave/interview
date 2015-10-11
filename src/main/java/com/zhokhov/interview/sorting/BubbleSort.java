@@ -14,14 +14,23 @@ import static com.zhokhov.interview.util.Console.*;
  */
 public class BubbleSort {
 
+    private int COMPARISONS_COUNT;
+    private int SWAPS_COUNT;
+
     public void sort(int[] array) {
+        COMPARISONS_COUNT = 0;
+        SWAPS_COUNT = 0;
+
         for (int reverseIndex = array.length - 1; reverseIndex > 1; reverseIndex--) {
             ____grey("------\nreverseIndex: " + reverseIndex);
 
             for (int i = 0; i < reverseIndex; i++) {
                 ____grey("i: " + i);
 
+                COMPARISONS_COUNT++;
+
                 if (array[i] > array[i + 1]) {
+                    SWAPS_COUNT++;
                     ____blue("Swapping: " + i + " and " + (i + 1));
 
                     // Swap code
@@ -29,6 +38,10 @@ public class BubbleSort {
 
                     array[i] = array[i + 1];
                     array[i + 1] = temp;
+
+                    __red("\n==> ");
+                    __dump(array);
+                    System.out.println("");
                 }
             }
         }
@@ -42,10 +55,17 @@ public class BubbleSort {
 
         System.out.println("\nSorting\n");
 
-        new BubbleSort().sort(array);
+        BubbleSort bubbleSort = new BubbleSort();
+        bubbleSort.sort(array);
 
         __green("\nResult: ");
         __dump(array);
+
+        ____grey("\nStatistics");
+        __green("  Comparisons: ");
+        System.out.print(bubbleSort.COMPARISONS_COUNT);
+        __green("\n  Swaps: ");
+        System.out.print(bubbleSort.SWAPS_COUNT);
 
         System.out.print("\n");
     }
