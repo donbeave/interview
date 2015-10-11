@@ -12,7 +12,7 @@ Very useful in interview process for Java Software Development Engineer (SDE).
 a+=1;
 ```
 
-**Growth Rate: 1**
+Growth Rate: **1**
 
 #### Logarithmic — divide in half (binary search)
 
@@ -22,7 +22,7 @@ while(n>1){
 }
 ```
 
-**Growth Rate: log(n)**
+Growth Rate: **log(n)**
 
 #### Linear — loop
 
@@ -32,7 +32,7 @@ for(c=0; c<n; c++){
 }
 ```
 
-**Growth Rate: n**
+Growth Rate: **n**
 
 #### Quadratic — Effective sorting algorithms
 
@@ -40,7 +40,7 @@ for(c=0; c<n; c++){
 Mergesort, Quicksort, …
 ```
 
-**Growth Rate: n*log(n)**
+Growth Rate: **n*log(n)**
 
 #### Quadratic - double loop
 
@@ -52,7 +52,7 @@ for(c=0; c<n; c++){
 }
 ```
 
-**Growth Rate: n^2**
+Growth Rate: **n^2**
 
 #### Cubic - triple loop
 
@@ -66,7 +66,7 @@ for(c=0; c<n; c++){
 }
 ```
 
-**Growth Rate: n^3**
+Growth Rate: **n^3**
 
 #### Exponential - exhaustive search
 
@@ -74,7 +74,7 @@ for(c=0; c<n; c++){
 Trying to break a password generating all possible combinations
 ```
 
-**Growth Rate: 2^n**
+Growth Rate: **2^n**
 
 ##### If-Then-Else
 
