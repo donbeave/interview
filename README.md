@@ -8,15 +8,73 @@ Very useful in interview process for Java Software Development Engineer (SDE).
 
 #### Constant — statement (one line of code)
 
-Growth Rate: 1
-Code:
-
 ```
 a+=1;
 ```
 
+**Growth Rate: 1**
+
 #### Logarithmic — divide in half (binary search)
 
+```
+while(n>1){
+  n=n/2;
+}
+```
+
+**Growth Rate: log(n)**
+
+#### Linear — loop
+
+```
+for(c=0; c<n; c++){
+  a+=1;
+}
+```
+
+**Growth Rate: n**
+
+#### Quadratic — Effective sorting algorithms
+
+```
+Mergesort, Quicksort, …
+```
+
+**Growth Rate: n*log(n)**
+
+#### Quadratic - double loop
+
+```
+for(c=0; c<n; c++){
+  for(i=0; i<n; i++){
+    a+=1;
+  }
+}
+```
+
+**Growth Rate: n^2**
+
+#### Cubic - triple loop
+
+```
+for(c=0; c<n; c++){
+  for(i=0; i<n; i++){
+    for(x=0; x<n; x++){
+      a+=1;
+    }
+  }
+}
+```
+
+**Growth Rate: n^3**
+
+#### Exponential - exhaustive search
+
+```
+Trying to break a password generating all possible combinations
+```
+
+**Growth Rate: 2^n**
 
 ##### If-Then-Else
 
