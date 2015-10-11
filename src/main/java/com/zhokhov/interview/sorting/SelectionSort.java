@@ -16,9 +16,18 @@ import static com.zhokhov.interview.util.Console.*;
  */
 public class SelectionSort {
 
+    private int COMPARISONS_COUNT;
+    private int SWAPS_COUNT;
+    private int LOOP_COUNT;
+
     public void sort(int array[]) {
+        COMPARISONS_COUNT = 0;
+        SWAPS_COUNT = 0;
+        LOOP_COUNT = 0;
+
         // Start from first
         for (int index = 0; index < array.length; index++) {
+            LOOP_COUNT++;
             ____cyan("\n--------\nindex: " + index);
 
 
@@ -27,6 +36,7 @@ public class SelectionSort {
 
             ____grey("found smallest element index: " + minIndex);
 
+            SWAPS_COUNT++;
             ____blue("Swapping: " + index + " and " + minIndex);
 
             // Swap code
@@ -34,6 +44,10 @@ public class SelectionSort {
 
             array[minIndex] = array[index];
             array[index] = temp;
+
+            __red("\n==> ");
+            __dump(array);
+            System.out.println("");
         }
     }
 
@@ -48,6 +62,8 @@ public class SelectionSort {
         int value = array[startIndex];
 
         for (int i = startIndex; i < array.length; i++) {
+            LOOP_COUNT++;
+            COMPARISONS_COUNT++;
             if (value > array[i]) {
                 minIndex = i;
                 value = array[minIndex];
@@ -70,6 +86,14 @@ public class SelectionSort {
 
         __green("\nResult: ");
         __dump(array);
+
+        ____grey("\nStatistics");
+        __green("  Comparisons: ");
+        System.out.print(selectionSort.COMPARISONS_COUNT);
+        __green("\n  Swaps: ");
+        System.out.print(selectionSort.SWAPS_COUNT);
+        __green("\n  Loops: ");
+        System.out.println(selectionSort.LOOP_COUNT);
     }
 
 }

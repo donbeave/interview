@@ -99,9 +99,9 @@ public class MergeSort {
 
     /*
      * A sample merge method to help understand the merge routine.
-     * This below function is not used by the merge sort
+     * This below function is not used by the merge sort.
      *
-     * This is here only for explanation purpose
+     * This is here only for explanation purpose.
      */
     public int[] sampleMerge(int[] leftArray, int[] rightArray) {
         int leftArrayEnd = leftArray.length - 1;

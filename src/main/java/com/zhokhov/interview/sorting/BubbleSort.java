@@ -16,15 +16,19 @@ public class BubbleSort {
 
     private int COMPARISONS_COUNT;
     private int SWAPS_COUNT;
+    private int LOOP_COUNT;
 
     public void sort(int[] array) {
         COMPARISONS_COUNT = 0;
         SWAPS_COUNT = 0;
+        LOOP_COUNT = 0;
 
         for (int reverseIndex = array.length - 1; reverseIndex > 1; reverseIndex--) {
+            LOOP_COUNT++;
             ____grey("------\nreverseIndex: " + reverseIndex);
 
             for (int i = 0; i < reverseIndex; i++) {
+                LOOP_COUNT++;
                 ____grey("i: " + i);
 
                 COMPARISONS_COUNT++;
@@ -66,8 +70,8 @@ public class BubbleSort {
         System.out.print(bubbleSort.COMPARISONS_COUNT);
         __green("\n  Swaps: ");
         System.out.print(bubbleSort.SWAPS_COUNT);
-
-        System.out.print("\n");
+        __green("\n  Loops: ");
+        System.out.println(bubbleSort.LOOP_COUNT);
     }
 
 }

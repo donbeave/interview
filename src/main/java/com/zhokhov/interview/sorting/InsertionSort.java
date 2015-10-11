@@ -16,10 +16,17 @@ import static com.zhokhov.interview.util.Console.*;
  */
 public class InsertionSort {
 
+    private int COMPARISONS_COUNT;
+    private int LOOP_COUNT;
+
     public void sort(int array[]) {
+        COMPARISONS_COUNT = 0;
+        LOOP_COUNT = 0;
+
         // Ignore the first element [0]
         // start from the element [1] -- Get that element and insert
         for (int index = 1; index < array.length; index++) {
+            LOOP_COUNT++;
             ____cyan("\n--------\nindex: " + index);
 
             insert(array, index);
@@ -39,8 +46,10 @@ public class InsertionSort {
         ____grey("reverseIndex: " + reverseIndex);
 
         for (int i = currentIndex - 1; i >= 0; i--) {
+            LOOP_COUNT++;
             ____grey("\ni: " + i);
 
+            COMPARISONS_COUNT++;
             // If the array element is  greater than the value
             // move the array element to the next higher index
             if (array[i] >= value) {
@@ -49,6 +58,11 @@ public class InsertionSort {
 
                 array[i + 1] = array[i];
                 reverseIndex = i;
+
+                System.out.print("\n[" + value + "]");
+                __red(" ==> ");
+                __dump(array);
+                System.out.println("");
             } else {
                 ____grey("breaking");
 
@@ -59,10 +73,17 @@ public class InsertionSort {
         ____grey("\nreverseIndex (after loop): " + reverseIndex + ", put value here");
 
         array[reverseIndex] = value;
+
+        __red("\n==> ");
+        __dump(array);
+        System.out.println("");
     }
 
     /*
-     * Sample method, introduce insert item
+     * A sample merge method to help understand the insert routine.
+     * This below function is not used by the insertion sort.
+     *
+     * This is here only for explanation purpose.
      */
     private void sampleInsert(int array[], int value) {
         ____grey("value: " + value);
@@ -109,6 +130,12 @@ public class InsertionSort {
 
         __green("\nResult: ");
         __dump(array);
+
+        ____grey("\nStatistics");
+        __green("  Comparisons: ");
+        System.out.print(insertionSort.COMPARISONS_COUNT);
+        __green("\n  Loops: ");
+        System.out.println(insertionSort.LOOP_COUNT);
 
         System.out.print("\n");
         System.out.println("***********************\n");
