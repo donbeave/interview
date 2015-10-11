@@ -117,6 +117,8 @@ has complexity `(N2)`. The loop executes N times and each function/procedure cal
 
 ### Bubble Sort
 
+![Bubble Sort](https://raw.githubusercontent.com/donbeave/interview/master/bubble-sort.gif)
+
 [Implementation](https://github.com/donbeave/interview/blob/master/src/main/java/com/zhokhov/interview/sorting/BubbleSort.java)
 
 The bubble sort is notoriously slow, but it’s conceptually the simplest of the sorting algorithms.
