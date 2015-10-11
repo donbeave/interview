@@ -129,14 +129,30 @@ The mergesort is also fairly easy to implement. It’s conceptually easier than 
 
 The heart of the mergesort algorithm is the merging of two already-sorted arrays. Merging two sorted arrays `A` and `B` creates a third array, `C`, that contains all the elements of `A` and `B`, also arranged in sorted order.
 
-The idea in the mergesort is to divide an array in half, sort each half, and then use the merge() method to merge the two halves into a single sorted array.
+Similar to quicksort the list of element which should be sorted is divided into two lists. These lists are sorted independently and then combined. During the combination of the lists the elements are inserted (or merged) on the correct place in the list.
+
 You divide the half into two quarters, sort each of the quarters, and merge them to make a sorted half.
+
+##### Sorting process
+
+1. Assume the size of the left array is k, the size of the right array is m and the size of the total array is n (=k+m).
+2. Create a helper array with the size n
+3. Copy the elements of the left array into the left part of the helper array. This is position 0 until k-1.
+4. Copy the elements of the right array into the right part of the helper array. This is position k until m-1.
+5. Create an index variable i=0; and j=k+1
+6. Loop over the left and the right part of the array and copy always the smallest value back into the original array. Once i=k all values have been copied back the original array. The values of the right array are already in place.
 
 ##### Efficiency
 
 As we noted, the mergesort runs in `O(N*logN)` time. There are `24` copies necessary to sort `8` items. `Log28` is `3`, so `8*log28` equals `24`. This shows that, for the case of `8` items, the number of copies is proportional to `N*log2N`.
 
 In the mergesort algorithm, the number of comparisons is always somewhat less than the number of copies.
+
+##### Comparison with Quicksort
+
+Compared to quicksort the mergesort algorithm puts less effort in dividing the list but more into the merging of the solution.
+
+Quicksort can sort "inline" of an existing collection, e.g. it does not have to create a copy of the collection while Standard mergesort does require a copy of the array although there are (complex) implementations of mergesort which allow to avoid this copying.
 
 ### Quick Sort
 
@@ -149,11 +165,28 @@ Quicksort is undoubtedly the most popular sorting algorithm, and for good reason
 
 To understand quicksort, you should be familiar with the partitioning algorithm.
 
-Quicksort algorithm operates by partitioning an array into two sub-arrays and then calling itself recursively to quicksort each of these subarrays
+Quicksort algorithm operates by partitioning an array into two sub-arrays and then calling itself recursively to quicksort each of these subarrays.
+
+##### Sorting process
+
+If the array contains only one element or zero elements then the array is sorted.
+
+If the array contains more then one element then:
+
+1. Select an element from the array. This element is called the "pivot element". For example select the element in the middle of the array.
+2. All elements which are smaller then the pivot element are placed in one array and all elements which are larger are placed in another array.
+3. Sort both arrays by recursively applying Quicksort to them.
+4. Combine the arrays.
+
+Quicksort can be implemented to sort "in-place". This means that the sorting takes place in the array and that no additional array need to be created.
 
 ##### Efficiency
 
 Quicksort operates in `O(N*logN)` time. This is generally true of the divide-and-conquer algorithms, in which a recursive method divides a range of items into two groups and then calls itself to handle each group. In this situation the logarithm actually has a base of `2`: The running time is proportional to `N*log2N`.
+
+##### Standard Java Array sorting
+
+Java offers a standard way of sorting Arrays with `Arrays.sort()`. This sort algorithm is a modified quicksort which show more frequently a complexity of `O(n log(n))`. See the Javadoc for details.
 
 ## Data Structures
 
