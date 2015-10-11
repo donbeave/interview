@@ -1,6 +1,70 @@
 # Data Structures and Algorithms in Java
 Very useful in interview process for Java Software Development Engineer (SDE).
 
+# Big O
+
+##### If-Then-Else
+
+```
+if (cond) then
+  block 1 (sequence of statements)
+else
+  block 2 (sequence of statements)
+end if;
+```
+
+If block `1` takes `O(1)` and block `2` takes `O(N)`, the if-then-else statement would be `O(N)`.
+
+##### Loops
+
+```
+for I in 1 .. N loop
+  sequence of statements
+end loop;
+```
+
+The loop executes `N` times, so the sequence of statements also executes `N` times. If we
+assume the statements are `O(1)``, the total time for the for loop is `N * O(1)`, which is `O(N)`
+overall.
+
+##### Nested loops
+
+```
+for I in 1 .. N loop
+  for J in 1 .. M loop
+    sequence of statements
+  end loop;
+end loop;
+```
+
+The outer loop executes N times. Every time the outer loop executes, the inner loop
+executes M times. As a result, the statements in the inner loop execute a total of `N * M`
+times. Thus, the complexity is `O(N * M)``.
+In a common special case where the stopping condition of the inner loop is `J < N`
+instead of `J < M` (i.e., the inner loop also executes `N` times), the total complexity for the two loops
+is `O(N2)`.
+
+##### Statements with function/ procedure calls
+
+When a statement involves a function/ procedure call, the complexity of the statement
+includes the complexity of the function/ procedure. Assume that you know that function/
+procedure `f` takes constant time, and that function/procedure `g` takes time proportional to
+(linear in) the value of its parameter `k`. Then the statements below have the time
+complexities indicated.
+
+`f(k)` has `O(1)`
+`g(k)` has `O(k)`
+
+When a loop is involved, the same rule applies. For example:
+
+```
+for J in 1 .. N loop
+  g(J);
+end loop;
+```
+
+has complexity `(N2)`. The loop executes N times and each function/procedure call `g(N)` is complexity `O(N)`.
+
 ## Simple Sorting
 
 ### Bubble Sort
