@@ -179,7 +179,23 @@ A doubly linked list can be used as the basis for a deque. In a deque you can in
 
 ### Iterator
 
-Objects containing references to items in data structures, used to traverse these struc- tures, are commonly called iterators (or sometimes, as in certain Java classes, enumera- tors). 
+Objects containing references to items in data structures, used to traverse these structures, are commonly called iterators (or sometimes, as in certain Java classes, enumerators). 
+
+### Hash Tables
+
+One important concept is how a range of key values is transformed into a range of array index values. In a hash table this is accomplished with a hash function. However, for certain kinds of keys, no hash function is necessary; the key values can be used directly as array indices.
+
+Thus, we look for a way to squeeze a range of 0 to more than `7,000,000,000,000` into the range `0` to `100,000`. A simple approach is to use the **modulo operator** (`%`), which finds the remainder when one number is divided by another:
+
+```
+arrayIndex = hugeNumber % arraySize;
+```
+
+This is an example of a hash function. It hashes (converts) a number in a large range into a number in a smaller range. 
+
+##### Hashing Efficiency
+
+Insertion and searching in hash tables can approach `O(1)` time. If no collision occurs, only a call to the hash function and a single array reference are necessary to insert a new item or find an existing item. This is the minimum access time.
 
 # Top 10 Object Oriented Design Principles
 
