@@ -45,9 +45,8 @@ public class SelectionSort {
             array[minIndex] = array[index];
             array[index] = temp;
 
-            __red("\n==> ");
+            __red("==> ");
             __dump(array);
-            System.out.println("");
         }
     }
 

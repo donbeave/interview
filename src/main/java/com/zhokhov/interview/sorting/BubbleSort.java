@@ -43,7 +43,7 @@ public class BubbleSort {
                     array[i] = array[i + 1];
                     array[i + 1] = temp;
 
-                    __red("\n==> ");
+                    __red("==> ");
                     __dump(array);
                     System.out.println("");
                 }
