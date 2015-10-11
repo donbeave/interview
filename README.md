@@ -112,6 +112,7 @@ end loop;
 
 has complexity `(N2)`. The loop executes N times and each function/procedure call `g(N)` is complexity `O(N)`.
 
+## Algorithms
 ## Simple Sorting
 
 ### Bubble Sort
