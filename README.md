@@ -42,7 +42,7 @@ Mergesort, Quicksort, …
 
 Growth Rate: **n*log(n)**
 
-#### Quadratic - double loop
+#### Quadratic — double loop
 
 ```
 for(c=0; c<n; c++){
@@ -54,7 +54,7 @@ for(c=0; c<n; c++){
 
 Growth Rate: **n^2**
 
-#### Cubic - triple loop
+#### Cubic — triple loop
 
 ```
 for(c=0; c<n; c++){
@@ -68,7 +68,7 @@ for(c=0; c<n; c++){
 
 Growth Rate: **n^3**
 
-#### Exponential - exhaustive search
+#### Exponential — exhaustive search
 
 ```
 Trying to break a password generating all possible combinations
