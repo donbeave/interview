@@ -59,10 +59,9 @@ public class InsertionSort {
                 array[i + 1] = array[i];
                 reverseIndex = i;
 
-                System.out.print("\n[" + value + "]");
+                System.out.print("[" + value + "]");
                 __red(" ==> ");
                 __dump(array);
-                System.out.println("");
             } else {
                 ____grey("breaking");
 
@@ -74,9 +73,8 @@ public class InsertionSort {
 
         array[reverseIndex] = value;
 
-        __red("\n==> ");
+        __red("==> ");
         __dump(array);
-        System.out.println("");
     }
 
     /*
