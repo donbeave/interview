@@ -324,6 +324,9 @@ http://www.yetanothercoder.ru/2013/06/algorithms-and-data-structures-of-jdk-7.ht
 7. [Big O Notation. Using not-boring math to measure code's efficiency](https://www.interviewcake.com/article/big-o-notation-time-and-space-complexity)
 8. [Understanding Algorithm complexity, Asymptotic and Big-O notation](http://www.codenlearn.com/2011/07/understanding-algorithm-complexity.html)
 9. [Big-O Algorithm Complexity Cheat Sheet](http://bigocheatsheet.com)
+10. [Algorithms in Java](http://www.vogella.com/tutorials/JavaAlgorithms/article.html)
+11. [Mergesort in Java](http://www.vogella.com/tutorials/JavaAlgorithmsMergesort/article.html)
+12. [Quicksort in Java](http://www.vogella.com/tutorials/JavaAlgorithmsQuicksort/article.html)
 
 ```
 You are free to use this code anywhere, copy, modify and redistribute at your own risk.
