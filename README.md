@@ -139,7 +139,7 @@ In a linked list, each data item is embedded in a link. A link is an object of a
 
 The LinkList class contains only one data item: a reference to the first link on the list. This reference is called first. It’s the only permanent information the list maintains about the location of any of the links. It finds the other links by following the chain of references from first, using each link’s next field.
 
-### Double-Ended Lists
+#### Double-Ended Lists
 
 A double-ended list is similar to an ordinary linked list, but it has one additional feature: a reference to the last link as well as to the first.
 
@@ -155,7 +155,7 @@ Finding, deleting, or inserting next to a specific item requires searching throu
 
 Of course, another important advantage of linked lists over arrays is that a linked list uses exactly as much memory as it needs and can expand to fill all of available memory.
 
-### Sorted Lists
+#### Sorted Lists
 
 In the linked lists we’ve seen thus far, there was no requirement that data be stored in order. However, for certain applications it’s useful to maintain the data in sorted order within the list. A list with this characteristic is called a sorted list.
 
@@ -165,7 +165,7 @@ In a sorted list, the items are arranged in sorted order by key value. Deletion 
 
 Insertion and deletion of arbitrary items in the sorted linked list require `O(N)` comparisons (`N/2` on the average) because the appropriate location must be found by stepping through the list. However, the minimum value can be found, or deleted, in `O(1)` time because it’s at the beginning of the list. If an application frequently accesses the minimum item, and fast insertion isn’t critical, then a sorted linked list is an effective choice. A priority queue might be implemented by a sorted linked list, for example.
 
-### Doubly Linked Lists
+#### Doubly Linked Lists
 
 Let’s examine another variation on the linked list: the doubly linked list (not to be confused with the double-ended list). What’s the advantage of a doubly linked list? A potential problem with ordinary linked lists is that it’s difficult to traverse backward along the list. A statement like
 current=current.next
