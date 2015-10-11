@@ -1,7 +1,7 @@
 # Data Structures and Algorithms in Java
 Very useful in interview process for Java Software Development Engineer (SDE).
 
-# Big O
+## Big O
 
 ##### If-Then-Else
 
@@ -292,6 +292,7 @@ http://www.yetanothercoder.ru/2013/06/algorithms-and-data-structures-of-jdk-7.ht
 2. [10 Object Oriented Design Principles Java Programmer should know](http://javarevisited.blogspot.com/2012/03/10-object-oriented-design-principles.html)
 3. [Design Patterns](http://www.oodesign.com/)
 4. [Algorithms for Dummies (Part 1): Big-O Notation and Sorting](http://adrianmejia.com/blog/2014/02/13/algorithms-for-dummies-part-1-sorting/)
+5. [Big O notation](http://web.mit.edu/16.070/www/lecture/big_o.pdf)
 
 ```
 You are free to use this code anywhere, copy, modify and redistribute at your own risk.
