@@ -99,16 +99,16 @@ Quicksort operates in `O(N*logN)` time. This is generally true of the divide-and
 
 # Top 10 Object Oriented Design Principles
 
-1. **DRY (Don't repeat yourself)** - avoids duplication in code
-2. **Encapsulate what changes** - hides implementation detail, helps in maintenance
-3. **Open Closed design principle** - open for extension, closed for modification
-4. **SRP (Single Responsibility Principle)** - one class should do one thing and do it well
-5. **DIP (Dependency Inversion Principle)** - don't ask, let framework give to you
-6. **Favor Composition over Inheritance** - code reuse without cost of inflexibility
-7. **LSP (Liskov Substitution Principle)** - sub type must be substitutable for super type
-8. **ISP (Interface Segregation Pricinciple)** - avoid monilithic interface, reduce pain on client side
-9. **Programming for Interface** - helps in maintenance, improves flexibility
-10. **Delegation principle** - don't do all things by yourself, delegate it
+1. **DRY (Don't repeat yourself)** — avoids duplication in code
+2. **Encapsulate what changes** — hides implementation detail, helps in maintenance
+3. **Open Closed design principle** — open for extension, closed for modification
+4. **SRP (Single Responsibility Principle)** — one class should do one thing and do it well
+5. **DIP (Dependency Inversion Principle)** — don't ask, let framework give to you
+6. **Favor Composition over Inheritance** — code reuse without cost of inflexibility
+7. **LSP (Liskov Substitution Principle)** — sub type must be substitutable for super type
+8. **ISP (Interface Segregation Pricinciple)** — avoid monilithic interface, reduce pain on client side
+9. **Programming for Interface** — helps in maintenance, improves flexibility
+10. **Delegation principle** — don't do all things by yourself, delegate it
 
 ### TODO
 
