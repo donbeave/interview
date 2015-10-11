@@ -1,7 +1,7 @@
 # Data Structures and Algorithms in Java
 Very useful in interview process for Java Software Development Engineer (SDE).
 
-## Big O
+## Big O Notation
 
 ![Big-O Complexity Chart](http://bigocheatsheet.com/img/big-o-complexity.png)
 
