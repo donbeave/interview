@@ -100,6 +100,10 @@ public class QuickSort {
 
         array[index1] = array[index2];
         array[index2] = temp;
+
+        __red("\n==> ");
+        __dump(array);
+        System.out.println("");
     }
 
     public static void main(String[] args) {
