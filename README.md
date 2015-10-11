@@ -3,6 +3,8 @@ Very useful in interview process for Java Software Development Engineer (SDE).
 
 ## Big O
 
+![Big-O Complexity Chart](http://bigocheatsheet.com/img/big-o-complexity.png)
+
 ##### If-Then-Else
 
 ```
