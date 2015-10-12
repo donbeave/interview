@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Quick Sort Algorithm. Step by step.</title>
+    <style type="text/css">
+        body {
+            font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+            color: #333;
+            background-color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 200;
+            border-bottom: 1px solid #E6E6E6;
+        }
+
+        .line {
+            width: 394px;
+            overflow: hidden;
+            position: relative;
+            padding-top: 25px;
+            margin: 20px auto 40px;
+        }
+
+        .line .description {
+            position: absolute;
+            top: 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .line .description span {
+            box-sizing: border-box;
+            padding: 2px 4px;
+            font-size: 90%;
+            color: #fff;
+            background-color: #333;
+            border-radius: 3px;
+            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
+        }
+
+        .item {
+            margin-left: 10px;
+            width: 30px;
+            float: left;
+            text-align: center;
+        }
+
+        .item .value {
+            width: 30px;
+            height: 30px;
+            border: 2px solid black;
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        .item .pos {
+            width: 34px;
+            font-size: 12px;
+            background-color: #9C9C9C;
+            color: white;
+        }
+
+        .item.pivot .value {
+            color: white;
+            background-color: black;
+        }
+
+        .item.pivot .pos {
+            background-color: black;
+            color: yellow;
+        }
+
+        .item.swapped .value {
+            border-color: red;
+            background-color: red;
+            color: white;
+        }
+
+        .item.first {
+            margin-left: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Quick Sort Algorithm. Step by step.</h1>
+
+<div class="line">
+    <div class="item first">
+        <div class="value">7</div>
+        <div class="pos">0</div>
+    </div>
+    <div class="item">
+        <div class="value">1</div>
+        <div class="pos">1</div>
+    </div>
+    <div class="item">
+        <div class="value">8</div>
+        <div class="pos">2</div>
+    </div>
+    <div class="item">
+        <div class="value">2</div>
+        <div class="pos">3</div>
+    </div>
+    <div class="item">
+        <div class="value">0</div>
+        <div class="pos">4</div>
+    </div>
+    <div class="item">
+        <div class="value">12</div>
+        <div class="pos">5</div>
+    </div>
+    <div class="item">
+        <div class="value">10</div>
+        <div class="pos">6</div>
+    </div>
+    <div class="item">
+        <div class="value">6</div>
+        <div class="pos">7</div>
+    </div>
+    <div class="item">
+        <div class="value">5</div>
+        <div class="pos">8</div>
+    </div>
+    <div class="item">
+        <div class="value">3</div>
+        <div class="pos">9</div>
+    </div>
+</div>
+
+<div class="line">
+    <div class="description">Step 1. Pivot value: <span>7</span>&nbsp;&nbsp;&nbsp;Swapping indexes: 2 and 9</div>
+    <div class="item first pivot">
+        <div class="value">7</div>
+        <div class="pos">0</div>
+    </div>
+    <div class="item">
+        <div class="value">1</div>
+        <div class="pos">1</div>
+    </div>
+    <div class="item swapped">
+        <div class="value">3</div>
+        <div class="pos">2</div>
+    </div>
+    <div class="item">
+        <div class="value">2</div>
+        <div class="pos">3</div>
+    </div>
+    <div class="item">
+        <div class="value">0</div>
+        <div class="pos">4</div>
+    </div>
+    <div class="item">
+        <div class="value">12</div>
+        <div class="pos">5</div>
+    </div>
+    <div class="item">
+        <div class="value">10</div>
+        <div class="pos">6</div>
+    </div>
+    <div class="item">
+        <div class="value">6</div>
+        <div class="pos">7</div>
+    </div>
+    <div class="item">
+        <div class="value">5</div>
+        <div class="pos">8</div>
+    </div>
+    <div class="item swapped">
+        <div class="value">8</div>
+        <div class="pos">9</div>
+    </div>
+</div>
+
+<div class="line">
+    <div class="description">Step 2. Pivot value: <span>7</span>&nbsp;&nbsp;&nbsp;Swapping indexes: 5 and 8</div>
+    <div class="item first pivot">
+        <div class="value">7</div>
+        <div class="pos">0</div>
+    </div>
+    <div class="item">
+        <div class="value">1</div>
+        <div class="pos">1</div>
+    </div>
+    <div class="item">
+        <div class="value">3</div>
+        <div class="pos">2</div>
+    </div>
+    <div class="item">
+        <div class="value">2</div>
+        <div class="pos">3</div>
+    </div>
+    <div class="item">
+        <div class="value">0</div>
+        <div class="pos">4</div>
+    </div>
+    <div class="item swapped">
+        <div class="value">5</div>
+        <div class="pos">5</div>
+    </div>
+    <div class="item">
+        <div class="value">10</div>
+        <div class="pos">6</div>
+    </div>
+    <div class="item">
+        <div class="value">6</div>
+        <div class="pos">7</div>
+    </div>
+    <div class="item swapped">
+        <div class="value">12</div>
+        <div class="pos">8</div>
+    </div>
+    <div class="item">
+        <div class="value">8</div>
+        <div class="pos">9</div>
+    </div>
+</div>
+
+<div class="line">
+    <div class="description">Step 3. Pivot value: <span>7</span>&nbsp;&nbsp;&nbsp;Swapping indexes: 6 and 7</div>
+    <div class="item first pivot">
+        <div class="value">7</div>
+        <div class="pos">0</div>
+    </div>
+    <div class="item">
+        <div class="value">1</div>
+        <div class="pos">1</div>
+    </div>
+    <div class="item">
+        <div class="value">3</div>
+        <div class="pos">2</div>
+    </div>
+    <div class="item">
+        <div class="value">2</div>
+        <div class="pos">3</div>
+    </div>
+    <div class="item">
+        <div class="value">0</div>
+        <div class="pos">4</div>
+    </div>
+    <div class="item">
+        <div class="value">5</div>
+        <div class="pos">5</div>
+    </div>
+    <div class="item swapped">
+        <div class="value">6</div>
+        <div class="pos">6</div>
+    </div>
+    <div class="item swapped">
+        <div class="value">10</div>
+        <div class="pos">7</div>
+    </div>
+    <div class="item">
+        <div class="value">12</div>
+        <div class="pos">8</div>
+    </div>
+    <div class="item">
+        <div class="value">8</div>
+        <div class="pos">9</div>
+    </div>
+</div>
+
+<div class="line">
+    <div class="description">Step 4. Pivot value: <span>7</span>&nbsp;&nbsp;&nbsp;Swapping indexes: 0 and 6</div>
+    <div class="item first pivot swapped">
+        <div class="value">6</div>
+        <div class="pos">0</div>
+    </div>
+    <div class="item">
+        <div class="value">1</div>
+        <div class="pos">1</div>
+    </div>
+    <div class="item">
+        <div class="value">3</div>
+        <div class="pos">2</div>
+    </div>
+    <div class="item">
+        <div class="value">2</div>
+        <div class="pos">3</div>
+    </div>
+    <div class="item">
+        <div class="value">0</div>
+        <div class="pos">4</div>
+    </div>
+    <div class="item">
+        <div class="value">5</div>
+        <div class="pos">5</div>
+    </div>
+    <div class="item swapped">
+        <div class="value">7</div>
+        <div class="pos">6</div>
+    </div>
+    <div class="item">
+        <div class="value">10</div>
+        <div class="pos">7</div>
+    </div>
+    <div class="item">
+        <div class="value">12</div>
+        <div class="pos">8</div>
+    </div>
+    <div class="item">
+        <div class="value">8</div>
+        <div class="pos">9</div>
+    </div>
+</div>
+
+<div class="line">
+    <div class="description">Step 5. Pivot value: <span>6</span>&nbsp;&nbsp;&nbsp;Swapping indexes: 0 and 5</div>
+    <div class="item first pivot swapped">
+        <div class="value">5</div>
+        <div class="pos">0</div>
+    </div>
+    <div class="item">
+        <div class="value">1</div>
+        <div class="pos">1</div>
+    </div>
+    <div class="item">
+        <div class="value">3</div>
+        <div class="pos">2</div>
+    </div>
+    <div class="item">
+        <div class="value">2</div>
+        <div class="pos">3</div>
+    </div>
+    <div class="item">
+        <div class="value">0</div>
+        <div class="pos">4</div>
+    </div>
+    <div class="item swapped">
+        <div class="value">6</div>
+        <div class="pos">5</div>
+    </div>
+    <div class="item">
+        <div class="value">7</div>
+        <div class="pos">6</div>
+    </div>
+    <div class="item">
+        <div class="value">10</div>
+        <div class="pos">7</div>
+    </div>
+    <div class="item">
+        <div class="value">12</div>
+        <div class="pos">8</div>
+    </div>
+    <div class="item">
+        <div class="value">8</div>
+        <div class="pos">9</div>
+    </div>
+</div>
+
+<div class="line">
+    <div class="description">Step 6. Pivot value: <span>5</span>&nbsp;&nbsp;&nbsp;Swapping indexes: 0 and 4</div>
+    <div class="item first pivot swapped">
+        <div class="value">0</div>
+        <div class="pos">0</div>
+    </div>
+    <div class="item">
+        <div class="value">1</div>
+        <div class="pos">1</div>
+    </div>
+    <div class="item">
+        <div class="value">3</div>
+        <div class="pos">2</div>
+    </div>
+    <div class="item">
+        <div class="value">2</div>
+        <div class="pos">3</div>
+    </div>
+    <div class="item swapped">
+        <div class="value">5</div>
+        <div class="pos">4</div>
+    </div>
+    <div class="item">
+        <div class="value">6</div>
+        <div class="pos">5</div>
+    </div>
+    <div class="item">
+        <div class="value">7</div>
+        <div class="pos">6</div>
+    </div>
+    <div class="item">
+        <div class="value">10</div>
+        <div class="pos">7</div>
+    </div>
+    <div class="item">
+        <div class="value">12</div>
+        <div class="pos">8</div>
+    </div>
+    <div class="item">
+        <div class="value">8</div>
+        <div class="pos">9</div>
+    </div>
+</div>
+
+<div class="line">
+    <div class="description">Step 7. Pivot value: <span>0</span>&nbsp;&nbsp;&nbsp;Swapping indexes: 0 and 0</div>
+    <div class="item first pivot swapped">
+        <div class="value">0</div>
+        <div class="pos">0</div>
+    </div>
+    <div class="item">
+        <div class="value">1</div>
+        <div class="pos">1</div>
+    </div>
+    <div class="item">
+        <div class="value">3</div>
+        <div class="pos">2</div>
+    </div>
+    <div class="item">
+        <div class="value">2</div>
+        <div class="pos">3</div>
+    </div>
+    <div class="item">
+        <div class="value">5</div>
+        <div class="pos">4</div>
+    </div>
+    <div class="item">
+        <div class="value">6</div>
+        <div class="pos">5</div>
+    </div>
+    <div class="item">
+        <div class="value">7</div>
+        <div class="pos">6</div>
+    </div>
+    <div class="item">
+        <div class="value">10</div>
+        <div class="pos">7</div>
+    </div>
+    <div class="item">
+        <div class="value">12</div>
+        <div class="pos">8</div>
+    </div>
+    <div class="item">
+        <div class="value">8</div>
+        <div class="pos">9</div>
+    </div>
+</div>
+
+<div class="line">
+    <div class="description">Step 8. Pivot value: <span>1</span>&nbsp;&nbsp;&nbsp;Swapping indexes: 1 and 1</div>
+    <div class="item first">
+        <div class="value">0</div>
+        <div class="pos">0</div>
+    </div>
+    <div class="item pivot swapped">
+        <div class="value">1</div>
+        <div class="pos">1</div>
+    </div>
+    <div class="item">
+        <div class="value">3</div>
+        <div class="pos">2</div>
+    </div>
+    <div class="item">
+        <div class="value">2</div>
+        <div class="pos">3</div>
+    </div>
+    <div class="item">
+        <div class="value">5</div>
+        <div class="pos">4</div>
+    </div>
+    <div class="item">
+        <div class="value">6</div>
+        <div class="pos">5</div>
+    </div>
+    <div class="item">
+        <div class="value">7</div>
+        <div class="pos">6</div>
+    </div>
+    <div class="item">
+        <div class="value">10</div>
+        <div class="pos">7</div>
+    </div>
+    <div class="item">
+        <div class="value">12</div>
+        <div class="pos">8</div>
+    </div>
+    <div class="item">
+        <div class="value">8</div>
+        <div class="pos">9</div>
+    </div>
+</div>
+
+<div class="line">
+    <div class="description">Step 9. Pivot value: <span>3</span>&nbsp;&nbsp;&nbsp;Swapping indexes: 2 and 3</div>
+    <div class="item first">
+        <div class="value">0</div>
+        <div class="pos">0</div>
+    </div>
+    <div class="item">
+        <div class="value">1</div>
+        <div class="pos">1</div>
+    </div>
+    <div class="item pivot swapped">
+        <div class="value">2</div>
+        <div class="pos">2</div>
+    </div>
+    <div class="item swapped">
+        <div class="value">3</div>
+        <div class="pos">3</div>
+    </div>
+    <div class="item">
+        <div class="value">5</div>
+        <div class="pos">4</div>
+    </div>
+    <div class="item">
+        <div class="value">6</div>
+        <div class="pos">5</div>
+    </div>
+    <div class="item">
+        <div class="value">7</div>
+        <div class="pos">6</div>
+    </div>
+    <div class="item">
+        <div class="value">10</div>
+        <div class="pos">7</div>
+    </div>
+    <div class="item">
+        <div class="value">12</div>
+        <div class="pos">8</div>
+    </div>
+    <div class="item">
+        <div class="value">8</div>
+        <div class="pos">9</div>
+    </div>
+</div>
+
+<div class="line">
+    <div class="description">Step 10. Pivot value: <span>10</span>&nbsp;&nbsp;&nbsp;Swapping indexes: 8 and 9</div>
+    <div class="item first">
+        <div class="value">0</div>
+        <div class="pos">0</div>
+    </div>
+    <div class="item">
+        <div class="value">1</div>
+        <div class="pos">1</div>
+    </div>
+    <div class="item">
+        <div class="value">2</div>
+        <div class="pos">2</div>
+    </div>
+    <div class="item">
+        <div class="value">3</div>
+        <div class="pos">3</div>
+    </div>
+    <div class="item">
+        <div class="value">5</div>
+        <div class="pos">4</div>
+    </div>
+    <div class="item">
+        <div class="value">6</div>
+        <div class="pos">5</div>
+    </div>
+    <div class="item">
+        <div class="value">7</div>
+        <div class="pos">6</div>
+    </div>
+    <div class="item pivot">
+        <div class="value">10</div>
+        <div class="pos">7</div>
+    </div>
+    <div class="item swapped">
+        <div class="value">8</div>
+        <div class="pos">8</div>
+    </div>
+    <div class="item swapped">
+        <div class="value">12</div>
+        <div class="pos">9</div>
+    </div>
+</div>
+
+<div class="line">
+    <div class="description">Step 11. Pivot value: <span>10</span>&nbsp;&nbsp;&nbsp;Swapping indexes: 7 and 8</div>
+    <div class="item first">
+        <div class="value">0</div>
+        <div class="pos">0</div>
+    </div>
+    <div class="item">
+        <div class="value">1</div>
+        <div class="pos">1</div>
+    </div>
+    <div class="item">
+        <div class="value">2</div>
+        <div class="pos">2</div>
+    </div>
+    <div class="item">
+        <div class="value">3</div>
+        <div class="pos">3</div>
+    </div>
+    <div class="item">
+        <div class="value">5</div>
+        <div class="pos">4</div>
+    </div>
+    <div class="item">
+        <div class="value">6</div>
+        <div class="pos">5</div>
+    </div>
+    <div class="item">
+        <div class="value">7</div>
+        <div class="pos">6</div>
+    </div>
+    <div class="item pivot swapped">
+        <div class="value">8</div>
+        <div class="pos">7</div>
+    </div>
+    <div class="item swapped">
+        <div class="value">10</div>
+        <div class="pos">8</div>
+    </div>
+    <div class="item">
+        <div class="value">12</div>
+        <div class="pos">9</div>
+    </div>
+</div>
+
+</body>
+</html>
