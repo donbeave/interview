@@ -232,6 +232,8 @@ Quicksort algorithm operates by partitioning an array into two sub-arrays and th
 
 ##### Sorting process
 
+[Preview](https://rawgit.com/donbeave/interview/master/quick-sort.html)
+
 If the array contains only one element or zero elements then the array is sorted.
 
 If the array contains more then one element then:
