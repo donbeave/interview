@@ -30,59 +30,14 @@ public class QuickSort {
      * The quickSort algorithm implementation
      */
     private void quickSort(int array[], int startIndex, int endIndex) {
-        // index of left-to-right scan
-        int leftIndex = startIndex;
-
-        // index of right-to-left scan
-        int rightIndex = endIndex;
-
-        __grey("\nquickSort, leftIndex: " + leftIndex + ", rightIndex: " + rightIndex + "  ==> ");
+        __grey("\nquickSort, startIndex: " + startIndex + ", endIndex: " + endIndex + "  ==> ");
         ____purple("" + (endIndex - startIndex >= 1));
 
         COMPARISONS_COUNT++;
         // check that there are at least two elements to sort
         // if there is only one element in the partition, do not do any sorting
         if (endIndex - startIndex >= 1) {
-            // set the pivot as the first element in the partition
-            int pivot = array[startIndex];
-
-            ____grey("pivot: " + pivot);
-
-            // while the scan indices from left and right have not met
-            while (rightIndex > leftIndex) {
-                COMPARISONS_COUNT++;
-
-                // from the left, look for the first
-                // element greater than the pivot
-                while (array[leftIndex] <= pivot && leftIndex <= endIndex && rightIndex > leftIndex) {
-                    COMPARISONS_COUNT++;
-
-                    leftIndex++;
-
-                    ____blue(" new leftIndex: " + leftIndex);
-                }
-
-                // from the right, look for the first
-                // element not greater than the pivot
-                while (array[rightIndex] > pivot && rightIndex >= startIndex && rightIndex >= leftIndex) {
-                    COMPARISONS_COUNT++;
-
-                    rightIndex--;
-
-                    ____blue(" new rightIndex: " + rightIndex);
-                }
-
-                COMPARISONS_COUNT++;
-                // if the left seekindex is still smaller than
-                // the right index, swap the corresponding elements
-                if (rightIndex > leftIndex) {
-                    swap(array, leftIndex, rightIndex);
-                }
-            }
-
-            // after the indices have crossed, swap the last element in
-            // the left partition with the pivot
-            swap(array, startIndex, rightIndex);
+            int rightIndex = partition(array, startIndex, endIndex);
 
             // quicksort the left partition
             quickSort(array, startIndex, rightIndex - 1);
@@ -90,6 +45,57 @@ public class QuickSort {
             // quicksort the right partition
             quickSort(array, rightIndex + 1, endIndex);
         }
+    }
+
+    private int partition(int array[], int startIndex, int endIndex) {
+        // index of left-to-right scan
+        int leftIndex = startIndex;
+
+        // index of right-to-left scan
+        int rightIndex = endIndex;
+
+        // set the pivot as the first element in the partition
+        int pivot = array[startIndex];
+
+        ____grey("pivot: " + pivot);
+
+        // while the scan indices from left and right have not met
+        while (rightIndex > leftIndex) {
+            COMPARISONS_COUNT++;
+
+            // from the left, look for the first
+            // element greater than the pivot
+            while (array[leftIndex] <= pivot && leftIndex <= endIndex && rightIndex > leftIndex) {
+                COMPARISONS_COUNT++;
+
+                leftIndex++;
+
+                ____blue(" new leftIndex: " + leftIndex);
+            }
+
+            // from the right, look for the first
+            // element not greater than the pivot
+            while (array[rightIndex] > pivot && rightIndex >= startIndex && rightIndex >= leftIndex) {
+                COMPARISONS_COUNT++;
+
+                rightIndex--;
+
+                ____blue(" new rightIndex: " + rightIndex);
+            }
+
+            COMPARISONS_COUNT++;
+            // if the left seekindex is still smaller than
+            // the right index, swap the corresponding elements
+            if (rightIndex > leftIndex) {
+                swap(array, leftIndex, rightIndex);
+            }
+        }
+
+        // after the indices have crossed, swap the last element in
+        // the left partition with the pivot
+        swap(array, startIndex, rightIndex);
+
+        return rightIndex;
     }
 
     private void swap(int array[], int index1, int index2) {
