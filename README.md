@@ -402,3 +402,10 @@ Your are solely responsibly for any damage that may occur by using this code.
 
 This code is not tested for all boundary conditions. Use it at your own risk.
 ```
+
+## Contributors 
+* [Alexey Zhokhov](http://www.zhokhov.com)
+
+## Contributing
+
+Please contribute using [Github Flow](https://guides.github.com/introduction/flow/). Create a branch, add commits, and [open a pull request](https://github.com/donbeave/interview/compare/).
