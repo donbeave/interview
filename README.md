@@ -409,3 +409,9 @@ This code is not tested for all boundary conditions. Use it at your own risk.
 ## Contributing
 
 Please contribute using [Github Flow](https://guides.github.com/introduction/flow/). Create a branch, add commits, and [open a pull request](https://github.com/donbeave/interview/compare/).
+
+## Btw,
+
+You deserve to smell great.
+
+[![Scentbird](https://s3-eu-west-1.amazonaws.com/scentbird/github-logo-no-shadow.svg)](https://www.scentbird.com/r/d/donbeave)
