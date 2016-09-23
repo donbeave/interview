@@ -415,3 +415,5 @@ Please contribute using [Github Flow](https://guides.github.com/introduction/flo
 You deserve to smell great.
 
 [![Scentbird](https://s3-eu-west-1.amazonaws.com/scentbird/github-logo-no-shadow.svg)](https://www.scentbird.com/r/d/donbeave)
+
+"Subscribe today and get your 2nd perfume FREE"
