@@ -9,14 +9,18 @@
  */
 package com.zhokhov.interview.data;
 
+import java.util.logging.Logger;
+
 /**
  * @author <a href='mailto:alexey@zhokhov.com'>Alexey Zhokhov</a>
  */
+
 public class ArrayList {
 
     private static final int SIZE_FACTOR = 5;
 
-    private Object data[];
+    private static final Logger logger = Logger.getLogger(ArrayList.class.getName());
+    private Object[] data;
 
     private int index;
 
@@ -29,7 +33,6 @@ public class ArrayList {
 
     public void add(Object item) {
         System.out.println("index:" + this.index + "size:" + this.size + "data size:" + this.data.length);
-
         if (this.index == this.size - 1) {
             //we need to increase the size of data[]
             increaseSizeAndReallocate();
@@ -43,46 +46,43 @@ public class ArrayList {
         this.size = this.size + SIZE_FACTOR;
 
         // TODO: Arrays.copyOf()
-        Object newData[] = new Object[this.size];
+        Object[] newData = new Object[this.size];
 
         // TODO: System.arraycopy(data, 0, newData, 0, data.length);
-        for (int i = 0; i < data.length; i++) {
-            newData[i] = data[i];
-        }
+        System.arraycopy(data, 0, newData, 0, data.length);
 
         this.data = newData;
 
-        System.out.println("***index:" + this.index + "size:" + this.size + "data size:" + this.data.length);
+        logger.info("***index:" + this.index + "size:" + this.size + "data size:" + this.data.length);
     }
 
-    public Object get(int index) throws Exception {
+    public Object get(int index) {
         if (index > this.index - 1) {
-            throw new Exception("ArrayIndexOutOfBound");
+            throw new IllegalStateException("ArrayIndexOutOfBound");
         }
         if (index < 0) {
-            throw new Exception("Negative Value");
+            throw new IllegalStateException("Negative Value");
         }
 
         return this.data[index];
     }
 
-    public void remove(int removeIndex) throws Exception {
+    public void remove(int removeIndex) {
         if (removeIndex > this.index - 1) {
-            throw new Exception("ArrayIndexOutOfBound");
+            throw new IllegalStateException("ArrayIndexOutOfBound");
         }
         if (removeIndex < 0) {
-            throw new Exception("Negative Value");
+            throw new IllegalStateException("Negative Value");
         }
-        System.out.println("Object getting removed:" + this.data[removeIndex]);
+        logger.fine("Object getting removed: " + this.data[removeIndex]);
 
-        for (int i = removeIndex; i < this.data.length - 1; i++) {
-            data[i] = data[i + 1];
-        }
+        if (this.data.length - 1 - removeIndex >= 0)
+            System.arraycopy(data, removeIndex + 1, data, removeIndex, this.data.length - 1 - removeIndex);
 
         this.index--;
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         ArrayList mal = new ArrayList();
         mal.add("1");
         mal.add("2");
@@ -98,7 +98,7 @@ public class ArrayList {
         // remove by index
         mal.remove(5);
 
-        System.out.println(mal.get(7));
+        logger.info((String) mal.get(7));
     }
 
 }
